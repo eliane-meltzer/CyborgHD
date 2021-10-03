@@ -5,27 +5,34 @@ import { MoviesService } from './movies.service';
 export class MoviesController {
     constructor(private moviesService: MoviesService) {}
 
-    @Get()
-    getMovies(): any {
-        console.log("returning movies...");
-        return this.moviesService.getMovies();
+    @Get('search/:searchString')
+    searchMovie(@Param('searchString') searchString): any {
+        return this.moviesService.searchMovies(searchString);
     }
-    @Get('trending')
+
+    @Get('genre/:genreId')
+    getMoviesByGenre(@Param('genreId') genreId): any {
+        return this.moviesService.getMoviesByGenre(genreId);
+    }
+
+    @Get('toprated')
     getTrending(): any {
-        return this.moviesService.getTrending();
+        return this.moviesService.getTopRated();
+    }
+
+    @Get('popular')
+    getPopular(): any {
+        return this.moviesService.getPopular();
+    }
+
+    @Get('genres')
+    getGenres(): any {
+        return this.moviesService.getGenres();
     }
 
     @Get(':movieId')
-    getMovie(@Param('movieId') movieId) {
-        const movie = this.moviesService.getMovie(movieId);
-        return movie;
+    getMovie(@Param('movieId') movieId): any {
+        return this.moviesService.getMovie(movieId);
     }
-
-    @Get('search/:searchString')
-    searchMovie(@Param('searchString') searchString) {
-        console.log("search string...");
-        const results = this.moviesService.searchMovies(searchString);
-    }
-
 
 }
