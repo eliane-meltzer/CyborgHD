@@ -4,8 +4,6 @@ import { AppService } from './app.service';
 import { MoviesModule } from './movies/movies.module';
 import { ConfigModule } from '@nestjs/config';
 
-
-
 @Module({
   imports: [ConfigModule.forRoot(), MoviesModule],
   controllers: [AppController],

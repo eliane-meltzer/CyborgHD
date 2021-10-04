@@ -1,0 +1,74 @@
+.content {
+
+  margin-top: 50px;
+}
+
+.movie-card {
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  width: 100%;
+  padding: 0;
+  background-color: #141414;
+}
+.movie-card:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
+  z-index: 1001;
+  -webkit-transition: transform .3s ease-in-out;
+}
+
+mat-card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.mat-card-image {
+  width: calc(100% + 0px);
+  margin: 0 -30px 16px -30px;
+}
+
+mat-card-content {
+  padding: 10px;
+  text-align: left;
+  text: white;
+}
+
+.list-movies {
+  display: inline;
+  text-align: left;
+  width: 80%;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  .all-poster::ng-deep .movie-card{  width: 15%; margin: 5px 5px 20px 5px; }
+  .all-poster::ng-deep .movie-card .mat-card-title{  font-size: 20px  }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .all-poster::ng-deep .movie-card{  width: 20%; margin: 5px 5px 20px 5px; }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .all-poster::ng-deep .movie-card{  width: 25%; margin: 5px 5px 20px 5px; }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .all-poster::ng-deep .movie-card{  width: 31%; margin: 5px 5px 20px 5px; }
+  .all-poster::ng-deep .movie-card .mat-card-title{  font-size: 17px  }
+  .filter-movies-card{ width: 24%; margin-bottom: 20px; }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .list-movies { width: 90% }
+  .all-poster::ng-deep .movie-card{  width: 88%; margin: 5px 0 5px 0; }
+  .filter-movies-card{ width: 80%; margin-bottom: 20px; }
+}
