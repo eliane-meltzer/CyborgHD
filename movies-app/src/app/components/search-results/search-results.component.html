@@ -1,19 +1,17 @@
 <div class="movie-container">
-<div class="list-movies">
-  <div style="text-align: center">
+  <div class="list-movies">
+    <div style="text-align: center">
       <span *ngFor="let movie of movies">
         <span class="all-poster">
                  <mat-card class="movie-card">
             <img *ngIf="movie.poster_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" [alt]="movie.title ? movie.title : movie.original_title">
             <img *ngIf="!movie.poster_path" mat-card-image src="http://www.catedrauamfujitsu.es/wp-content/themes/invicta/styles/images/defaults/no_photo.jpg" class="movie-header-card" [alt]="movie.title ? movie.title : movie.original_title">
             <mat-card-content>
-              <strong style="color: white;"> {{convertRating(movie.vote_average)}}%
-                <mat-icon [ngStyle]="{'color':'white'}" aria-hidden="false" aria-label="Example home icon">thumb_up</mat-icon>
-            </strong>
             </mat-card-content>
           </mat-card>
           </span>
       </span>
+    </div>
   </div>
 </div>
-</div>
+

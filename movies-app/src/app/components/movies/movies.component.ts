@@ -2,8 +2,6 @@ import { Component, OnInit, ViewChildren } from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../models/movie";
 
-
-
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -22,14 +20,11 @@ export class MoviesComponent implements OnInit {
     const movieSubs = this.moviesService.getPopularMovies().subscribe(
       movie => {
         this.movies = movie.results;
-        console.log("movies: " + this.movies.toString());
         // this.generateSeo();
 
         if (!this.movies) {
           alert('Server Error')
         } else {
-          console.log("TITLE" + this.movie.original_title);
-          console.log("OVERVIEW" + this.movie.overview);
         }
       }, () => {},
       () => { if (movieSubs) { movieSubs.unsubscribe() } }
@@ -50,8 +45,6 @@ export class MoviesComponent implements OnInit {
         if (!this.movie) {
           alert('Server Error')
         } else {
-          console.log("TITLE" + this.movie.original_title);
-          console.log("OVERVIEW" + this.movie.overview);
         }
       }, () => {},
       () => { if (movieSubs) { movieSubs.unsubscribe() } }

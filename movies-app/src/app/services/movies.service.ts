@@ -30,4 +30,9 @@ export class MoviesService {
     console.log(this.baseUrl + 'movies/' + id);
     return this.http.get(this.baseUrl + 'movies/' + id);
   }
+
+  public searchMovies(searchString: string): Observable<any> {
+    console.log(this.baseUrl + 'movies/search/' + searchString);
+    return this.http.get(this.baseUrl + 'movies/search/' + searchString);
+  }
 }
