@@ -8,31 +8,37 @@ import {Observable} from "rxjs";
 export class MoviesService {
 
   baseUrl: string;
+  prefix: string = "movies";
 
   constructor(private http: HttpClient) {
     this.baseUrl = 'http://localhost:3000/';
-
   }
 
-  public getTrendingMovies(): Observable<any> {
-    return this.http.get(this.baseUrl + 'movies/trending');
+  public getNowPlaying(): Observable<any> {
+    return this.http.get(this.baseUrl + this.prefix + '/now-playing');
   }
 
   public getTopRatedMovies(): Observable<any> {
-    return this.http.get(this.baseUrl + 'movies/toprated');
+    return this.http.get(this.baseUrl + this.prefix + '/toprated');
   }
 
   public getPopularMovies(): Observable<any> {
-    return this.http.get(this.baseUrl + 'movies/popular');
+    return this.http.get(this.baseUrl + this.prefix + '/popular');
   }
 
   public getMovie(id: string): Observable<any> {
-    console.log(this.baseUrl + 'movies/' + id);
-    return this.http.get(this.baseUrl + 'movies/' + id);
+    return this.http.get(this.baseUrl + this.prefix + '/' + id);
   }
 
   public searchMovies(searchString: string): Observable<any> {
-    console.log(this.baseUrl + 'movies/search/' + searchString);
-    return this.http.get(this.baseUrl + 'movies/search/' + searchString);
+    return this.http.get(this.baseUrl + this.prefix + '/search/' + searchString);
+  }
+
+  public getGenres(): Observable<any> {
+    return this.http.get(this.baseUrl + this.prefix + '/genres');
+  }
+
+  public getGetMoviesByGenre(genreId: number): Observable<any> {
+    return this.http.get(this.baseUrl + 'movies/genre/' + genreId);
   }
 }

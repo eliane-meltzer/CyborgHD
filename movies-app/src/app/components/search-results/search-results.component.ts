@@ -16,23 +16,23 @@ import {MoviesService} from "../../services/movies.service";
 export class SearchResultsComponent implements OnInit {
 
   searchString: string;
+  hasResults: boolean = true;
   movies: Array<Movie>;
-
+  title: string = "Search Results";
 
   constructor(private searchService: SearchService,
               private movieService: MoviesService) {
-    this.searchString = searchService.searchString;
+  }
+
+  ngOnInit(): void {
     this.searchService.searchStringChange.pipe(
       mergeMap((searchString: string) => {
+        this.searchString = this.searchService.searchString;
         return this.movieService.searchMovies(searchString);
       })
     ).subscribe((movies) => {
       this.movies = movies.results;
+      this.hasResults = (this.movies.length != 0 && this.searchString.length > 0) ? true : false;
     });
   }
-
-  ngOnInit(): void {
-
-  }
-
 }

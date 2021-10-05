@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import {Subject} from "rxjs";
 export class SearchService {
   searchString: string;
 
-  searchStringChange: Subject<string> = new Subject<string>();
+  searchStringChange: BehaviorSubject<string> = new BehaviorSubject<string>("");
 
   constructor()  {
     this.searchStringChange.subscribe((value) => {
@@ -16,7 +16,6 @@ export class SearchService {
   }
 
   updateSearchString(search: string) {
-    console.log("updateSearchString: " + search);
     this.searchStringChange.next(search);
   }
 }

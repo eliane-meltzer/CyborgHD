@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {SearchService} from "./services/search.service";
+import {MoviesService} from "./services/movies.service";
+import {Genre} from "./models/genre";
 
 
 @Component({
@@ -10,9 +12,21 @@ import {SearchService} from "./services/search.service";
 })
 export class AppComponent {
   title = 'movies-app';
+  genres: Array<Genre>;
 
   constructor(private router: Router,
-              private searchService: SearchService) {
+              private searchService: SearchService,
+              private moviesService: MoviesService) {
+
+    const movieSubs = this.moviesService.getGenres().subscribe(
+      genres => {
+        this.genres = genres.genres;
+        if (!this.genres) {
+          console.error("Server error - Could not fetch genres")
+        }
+      }, () => {},
+      () => { if (movieSubs) { movieSubs.unsubscribe() } }
+    );
   }
 
   public searchInput: string;
@@ -24,7 +38,7 @@ export class AppComponent {
     if(this.router.url != "/search")
       this.router.navigateByUrl("/search");
     else if(event.key == 'Backspace' && event.target.value.length == 0) {
-      this.router.navigateByUrl("/movies");
+      this.router.navigateByUrl("/home");
     }
   }
 

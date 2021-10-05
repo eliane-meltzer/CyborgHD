@@ -43,6 +43,18 @@ export class MoviesService {
             }));
     }
 
+    getNowPlaying(): any {
+        return this.httpService.get('https://api.themoviedb.org/3/movie/now_playing?api_key=' + process.env.API_KEY
+            , {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).pipe(
+            map(response => response.data), catchError(e => {
+                throw new HttpException(e.response.data, e.response.status);
+            }));
+    }
+
     getPopular(): any {
         return this.httpService.get('https://api.themoviedb.org/3/movie/popular?api_key=' + process.env.API_KEY
             , {
@@ -68,8 +80,6 @@ export class MoviesService {
     }
 
     getMoviesByGenre(genreId): any {
-        let id = Number(genreId);
-        console.log("get by genre :) ");
         return this.httpService.get('https://api.themoviedb.org/3/discover/movie?api_key=' + process.env.API_KEY +'&with_genres=' + genreId
             , {
                 headers: {

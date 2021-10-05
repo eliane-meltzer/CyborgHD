@@ -15,6 +15,11 @@ export class MoviesController {
         return this.moviesService.getMoviesByGenre(genreId);
     }
 
+    @Get('now-playing')
+    getNowPlaying(): any {
+        return this.moviesService.getNowPlaying();
+    }
+
     @Get('toprated')
     getTrending(): any {
         return this.moviesService.getTopRated();

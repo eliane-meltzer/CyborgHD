@@ -1,17 +1,8 @@
-<div class="movie-container">
-  <div class="list-movies">
-    <div style="text-align: center">
-      <span *ngFor="let movie of movies">
-        <span class="all-poster">
-                 <mat-card class="movie-card">
-            <img *ngIf="movie.poster_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" [alt]="movie.title ? movie.title : movie.original_title">
-            <img *ngIf="!movie.poster_path" mat-card-image src="http://www.catedrauamfujitsu.es/wp-content/themes/invicta/styles/images/defaults/no_photo.jpg" class="movie-header-card" [alt]="movie.title ? movie.title : movie.original_title">
-            <mat-card-content>
-            </mat-card-content>
-          </mat-card>
-          </span>
-      </span>
-    </div>
-  </div>
+<span *ngIf="hasResults">
+  <app-movie-list [title]="title" [movies]="movies"></app-movie-list>
+</span>
+<div *ngIf="!hasResults" class="no-results">
+  <h3>No results found for "{{this.searchString}}".</h3>
+  <p>Try searching with a movie title or genre.</p>
 </div>
 
