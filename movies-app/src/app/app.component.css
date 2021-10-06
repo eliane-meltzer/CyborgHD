@@ -127,6 +127,7 @@ nav .content .links{
   .wrapper .menu-icon{
     display: block;
   }
+
   nav .content .links{
     display: block;
     position: fixed;
@@ -134,15 +135,15 @@ nav .content .links{
     height: 100%;
     width: 100%;
     top: 60px;
-    left: -100%;
+    right: -100%;
     margin-left: 0;
     max-width: 350px;
     overflow-y: auto;
     padding-bottom: 100px;
     transition: all 0.3s ease;
   }
-  nav #show-menu:checked ~ .content .links{
-    left: 0%;
+  #show-menu:checked ~ .content .links{
+    right: 0%;
   }
   .content .links li{
     margin: 15px 20px;
@@ -190,6 +191,7 @@ nav .content .links{
   .wrap {
     display: none;
   }
+
 
 }
 
