@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EMPTY} from "rxjs";
 import { HttpErrorResponse } from "@angular/common/http";
 import { mergeMap } from "rxjs/operators";
 import { Movie } from "../../models/movie";
@@ -25,7 +26,10 @@ export class SearchResultsComponent implements OnInit {
     this.searchService.searchStringChange.pipe(
       mergeMap((searchString: string) => {
         this.searchString = this.searchService.searchString;
-        return this.movieService.searchMovies(searchString);
+        if(this.searchService.searchString && searchString.length > 0)
+          return this.movieService.searchMovies(this.searchString);
+        else
+          return EMPTY;
       })
     ).subscribe((movies) => {
       this.movies = movies.results;
