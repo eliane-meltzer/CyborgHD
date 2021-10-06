@@ -67,14 +67,14 @@
   color:white;
   vertical-align:bottom;
 }
-  @media screen and (max-width: 612px) {
-    .play-button {
-      display: block;
-      width: 90px;
-      margin-top: 10px;
-      margin-left: 0px;
-    }
-    .bullet {
-      display: none;
-    }
+@media screen and (max-width: 612px) {
+  .play-button {
+    display: block;
+    width: 90px;
+    margin-top: 10px;
+    margin-left: 0px;
   }
+  .bullet {
+    display: none;
+  }
+}

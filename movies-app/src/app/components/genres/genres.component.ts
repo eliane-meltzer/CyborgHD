@@ -22,6 +22,7 @@ export class GenresComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // uses id url param to fetch genre data
     this.route.paramMap.pipe(
       mergeMap((params: ParamMap) => {
         this.id= Number(params.get('id'));
@@ -34,15 +35,20 @@ export class GenresComponent implements OnInit {
     });
   }
 
+  /**
+   * Looks up genre name by genre id and assigns it to this.title
+   * @author   El
+   * @param    genreId
+   */
   lookupGenreTitle(genreId: number) {
     let genresList: Array<Genre>;
-      this.moviesService.getGenres().subscribe((genres) => {
-        genresList = genres.genres;
-        let result = genresList.find(obj => {
-          return obj.id === this.id;
-        })
-        this.title =  result.name;
-     });
+    this.moviesService.getGenres().subscribe((genres) => {
+      genresList = genres.genres;
+      let result = genresList.find(obj => {
+        return obj.id === this.id;
+      })
+      this.title =  result.name;
+    });
   }
 
 }

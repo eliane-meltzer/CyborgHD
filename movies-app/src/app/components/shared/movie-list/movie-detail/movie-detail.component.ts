@@ -32,10 +32,22 @@ export class MovieDetailComponent implements OnInit {
       });
   }
 
+  /**
+   * Converts rating to percentage
+   * @author Eliane Zalewski
+   * @param {number} rating - Rating of the movie
+   * @returns {number} - Movie
+   */
   convertRating(rating: number): number {
     return Math.round((rating/10)*100);
   }
 
+  /**
+   * Gets release year from release date
+   * @author Eliane Zalewski
+   * @param {string} releaseDate - Release date of movie (YYYY-MM-DD)
+   * @returns {string} - Release year
+   */
   getReleaseYear(releaseDate: string) : string {
     return releaseDate.substring(0,4);
   }

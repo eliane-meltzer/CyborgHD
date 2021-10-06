@@ -1,34 +1,34 @@
 <div class="app">
-<div class="content-wrapper">
-  <nav>
-    <input type="checkbox" id="show-menu">
-    <div class="content">
-      <div class="logo"><a href="/home">CYBORG HD</a></div>
-      <ul class="links">
-        <li>
-          <a class="desktop-link">Genres</a>
-          <input type="checkbox" id="show-genres">
-          <label for="show-genres">Genres</label>
-          <ul>
-            <span *ngFor="let genre of genres">
-              <li><a [routerLink]="['/genres', genre.id]" [state]="{name:genre.name}">{{genre.name}}</a></li>
-            </span>
-          </ul>
-        </li>
-        <li><a [routerLink]="['/popular']">Popular</a></li>
-        <li><a [routerLink]="['/top-rated']">Top Rated</a></li>
-      </ul>
-    </div>
-    <div class="search-wrapper">
-      <div class="search">
-        <input type="text" (keyup)="doSearch($event)" class="search-term" placeholder="Movies, people, genres...">
-        <button type="submit" class="search-button">
-          <mat-icon [ngStyle]="{'color':'white'}">search</mat-icon>
-        </button>
+  <div class="content-wrapper">
+    <nav>
+      <input type="checkbox" id="show-menu">
+      <div class="content">
+        <div class="logo"><a href="/home">CYBORG HD</a></div>
+        <ul class="links">
+          <li>
+            <a class="desktop-link">Genres</a>
+            <input type="checkbox" id="show-genres">
+            <label for="show-genres">Genres</label>
+            <ul>
+              <span *ngFor="let genre of genres">
+                <li><a [routerLink]="['/genres', genre.id]" [state]="{name:genre.name}">{{genre.name}}</a></li>
+              </span>
+            </ul>
+          </li>
+          <li><a [routerLink]="['/popular']">Popular</a></li>
+          <li><a [routerLink]="['/top-rated']">Top Rated</a></li>
+        </ul>
       </div>
-    </div>
-    <label for="show-menu" class="menu-icon"><mat-icon>menu</mat-icon></label>
-  </nav>
-</div>
-<router-outlet></router-outlet>
+      <div class="search-wrapper">
+        <div class="search">
+          <input type="text" (keyup)="doSearch($event)" class="search-term" placeholder="Movies, people, genres...">
+          <button type="submit" class="search-button">
+            <mat-icon [ngStyle]="{'color':'white'}">search</mat-icon>
+          </button>
+        </div>
+      </div>
+      <label for="show-menu" class="menu-icon"><mat-icon>menu</mat-icon></label>
+    </nav>
+  </div>
+  <router-outlet></router-outlet>
 </div>

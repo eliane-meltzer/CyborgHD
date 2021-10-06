@@ -1,5 +1,10 @@
 import {Genre} from "./genre";
 
+/**
+ * @file Data model for Movie.
+ * @author Eliane Zalewski
+ */
+
 export class Movie {
   public adult: boolean;
   public backdrop_path: string;

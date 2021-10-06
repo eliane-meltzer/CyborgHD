@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
 
+/**
+ * @file Service that stores and publishes the user-entered search string
+ * @author Eliane Zalewski
+ */
+
 @Injectable({
   providedIn: 'root'
 })

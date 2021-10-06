@@ -23,6 +23,11 @@ export class AppComponent {
       });
   }
 
+  /**
+   * Update search string and navigation based on user input
+   * @author Eliane Zalewski
+   * @param {$event} event - User keypress event
+   */
   doSearch(event) {
     this.searchService.updateSearchString(event.target.value);
     if(this.router.url != "/search")
