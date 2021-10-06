@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {SearchService} from "../../services/search.service";
-import {Movie} from "../../models/movie";
-import {flatMap} from "tslint/lib/utils";
-import {mergeMap, switchMap} from "rxjs/operators";
-import {HttpErrorResponse} from "@angular/common/http";
-import {MatTableDataSource} from "@angular/material/table";
-import {MoviesService} from "../../services/movies.service";
-
+import { HttpErrorResponse } from "@angular/common/http";
+import { mergeMap } from "rxjs/operators";
+import { Movie } from "../../models/movie";
+import { MoviesService } from "../../services/movies.service";
+import { SearchService } from "../../services/search.service";
 
 @Component({
   selector: 'app-search-results',
@@ -35,4 +32,5 @@ export class SearchResultsComponent implements OnInit {
       this.hasResults = (this.movies.length != 0 && this.searchString.length > 0) ? true : false;
     });
   }
+
 }

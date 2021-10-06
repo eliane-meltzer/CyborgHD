@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Movie} from "../../models/movie";
-import {MoviesService} from "../../services/movies.service";
+import { Movie } from "../../models/movie";
+import { MoviesService } from "../../services/movies.service";
 
 @Component({
   selector: 'app-top-rated',
@@ -19,12 +19,7 @@ export class TopRatedComponent implements OnInit {
     const movieSubs = this.moviesService.getTopRatedMovies().subscribe(
       movie => {
         this.movies = movie.results;
-        if (!this.movies) {
-          console.error("Server error - Could not fetch popular movies");
-        }
-      }, () => {},
-      () => { if (movieSubs) { movieSubs.unsubscribe() } }
-    );
+      });
   }
 
 }

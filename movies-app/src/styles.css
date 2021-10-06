@@ -1,13 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @font-face {
   font-family: "Tachyon";
   src: local("Tachyon"), url(./assets/Tachyon.ttf) format("truetype");
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #141414; }
-
 *{
   margin: 0;
   padding: 0;
@@ -15,18 +10,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
 }
-
-.heading {
-  color: white;
-  padding-left: 50px;
-  font-weight: normal;
+html, body {
+  height: 100%;
 }
-
+body {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #141414;
+}
 mat-dialog-container {
   background: #141414 !important;
 }
-
-
 .app-full-bleed-dialog .mat-dialog-container {
   padding: 0;
   margin: 0px;

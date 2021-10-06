@@ -1,8 +1,7 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MoviesService} from "../../../../services/movies.service";
-import {Movie} from "../../../../models/movie";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Genre} from "../../../../models/genre";
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { Movie } from "../../../../models/movie";
+import { MoviesService } from "../../../../services/movies.service";
 
 @Component({
   selector: 'app-movie-detail',
@@ -18,10 +17,6 @@ export class MovieDetailComponent implements OnInit {
     public dialogRef: MatDialogRef<MovieDetailComponent>,
     private moviesService: MoviesService,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
 
   ngOnInit(): void {
     this.moviesService.getGenres().subscribe(
@@ -44,4 +39,5 @@ export class MovieDetailComponent implements OnInit {
   getReleaseYear(releaseDate: string) : string {
     return releaseDate.substring(0,4);
   }
+
 }

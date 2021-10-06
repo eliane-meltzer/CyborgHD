@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TopRatedComponent } from './top-rated.component';
 
 describe('TopRatedComponent', () => {

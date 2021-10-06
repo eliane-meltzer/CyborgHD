@@ -3,19 +3,17 @@
   max-width: 100%;
   margin: auto;
 }
-.wrapper{
+.content-wrapper{
   background: #141414;
   position: fixed;
   top: 0px;
   width: 100%;
   z-index: 1000;
 }
-
-.wrapper input[type="checkbox"]{
+.content-wrapper input[type="checkbox"]{
   display: none;
 }
-
-.wrapper nav{
+.content-wrapper nav{
   position: relative;
   display: flex;
   max-width: calc(100% - 100px);
@@ -37,7 +35,6 @@ nav .content .links{
   font-family: Tachyon;
   font-size: 30px;
 }
-
 .content .links li{
   list-style: none;
   line-height: 70px;
@@ -58,19 +55,17 @@ nav .content .links{
 .content .links li label:hover{
   opacity:.7;
 }
-.wrapper .menu-icon{
+.content-wrapper .menu-icon{
   color: #fff;
   font-size: 18px;
   cursor: pointer;
   line-height: 0px;
   width: 70px;
   text-align: left;
-
 }
-.wrapper .menu-icon{
+.content-wrapper .menu-icon{
   display: none;
 }
-
 /* Dropdown Menu code start */
 .content .links ul{
   position: absolute;
@@ -84,7 +79,6 @@ nav .content .links{
   -moz-columns: 4;
   padding-bottom: 10px;
 }
-
 .content .links li:hover > ul{
   top: 70px;
   opacity: 1;
@@ -116,18 +110,11 @@ nav .content .links{
   .content .links li a{
     padding: 8px 13px;
   }
-  .wrapper .search-box{
-    max-width: calc(100% - 100px);
-  }
-  .wrapper .search-box input{
-    padding: 0 100px 0 15px;
-  }
 }
 @media screen and (max-width: 935px){
-  .wrapper .menu-icon{
+  .content-wrapper .menu-icon{
     display: block;
   }
-
   nav .content .links{
     display: block;
     position: fixed;
@@ -188,13 +175,10 @@ nav .content .links{
   .content .logo a{
     font-size: 27px;
   }
-  .wrap {
+  .search-wrapper {
     display: none;
   }
-
-
 }
-
 .search-button {
   background: none;
   border: none;
@@ -205,5 +189,4 @@ nav .content .links{
   background: none;
   outline: none;
   color: white;
-
 }

@@ -1,6 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +39,7 @@ export class MoviesService {
   }
 
   public getGetMoviesByGenre(genreId: number): Observable<any> {
-    return this.http.get(this.baseUrl + 'movies/genre/' + genreId);
+    return this.http.get(this.baseUrl + this.prefix + '/genre/' + genreId);
   }
+
 }

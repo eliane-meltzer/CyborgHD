@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Movie} from "../../../models/movie";
-import {MovieDetailComponent} from "./movie-detail/movie-detail.component";
-import {MatDialog} from "@angular/material/dialog";
+import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from "../../../models/movie";
+import { MovieDetailComponent } from "./movie-detail/movie-detail.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-movie-list',

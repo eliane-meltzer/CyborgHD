@@ -1,9 +1,9 @@
+import { ActivatedRoute, ParamMap } from "@angular/router";
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap} from "@angular/router";
-import {MoviesService} from "../../services/movies.service";
-import {mergeMap} from "rxjs/operators";
-import {Movie} from "../../models/movie";
-import {Genre} from "../../models/genre";
+import { Genre } from "../../models/genre";
+import { mergeMap } from "rxjs/operators";
+import { Movie } from "../../models/movie";
+import { MoviesService } from "../../services/movies.service";
 
 @Component({
   selector: 'app-genres',
@@ -44,4 +44,5 @@ export class GenresComponent implements OnInit {
         this.title =  result.name;
      });
   }
+
 }

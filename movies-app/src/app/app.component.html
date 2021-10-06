@@ -1,5 +1,5 @@
 <div class="app">
-<div class="wrapper">
+<div class="content-wrapper">
   <nav>
     <input type="checkbox" id="show-menu">
     <div class="content">
@@ -19,7 +19,7 @@
         <li><a [routerLink]="['/top-rated']">Top Rated</a></li>
       </ul>
     </div>
-    <div class="wrap">
+    <div class="search-wrapper">
       <div class="search">
         <input type="text" (keyup)="doSearch($event)" class="search-term" placeholder="Movies, people, genres...">
         <button type="submit" class="search-button">

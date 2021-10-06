@@ -1,11 +1,11 @@
-<div class="movie-container">
-  <div class="list-movies">
+<div class="movie-container-wrapper">
+  <div class="movie-container">
     <h1 class="heading">
       {{title}}
     </h1>
     <div class="movie-list">
       <span *ngFor="let movie of movies">
-        <span *ngIf="movie.poster_path && !movie.adult" class="all-poster">
+        <span *ngIf="movie.poster_path && !movie.adult">
           <div class="movie-card" (click)="viewMovieDetails(movie)">
             <img *ngIf="movie.poster_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" [alt]="movie.title ? movie.title : movie.original_title">
           </div>

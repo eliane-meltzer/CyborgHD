@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
+import { Genre } from "./models/genre";
+import { MoviesService } from "./services/movies.service";
 import { Router } from '@angular/router';
-import {SearchService} from "./services/search.service";
-import {MoviesService} from "./services/movies.service";
-import {Genre} from "./models/genre";
-
+import { SearchService } from "./services/search.service";
 
 @Component({
   selector: 'app-root',
@@ -21,12 +20,7 @@ export class AppComponent {
     const movieSubs = this.moviesService.getGenres().subscribe(
       genres => {
         this.genres = genres.genres;
-        if (!this.genres) {
-          console.error("Server error - Could not fetch genres")
-        }
-      }, () => {},
-      () => { if (movieSubs) { movieSubs.unsubscribe() } }
-    );
+      });
   }
 
   doSearch(event) {
