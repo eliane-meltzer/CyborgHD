@@ -5,7 +5,7 @@ export class Movie {
   public backdrop_path: string;
   public belongs_to_collection: string;
   public budget: number;
-  public genres: Array<Genre>;
+  public genre_ids: Array<Genre>;
   public homepage: string;
   public id: number;
   public imdb_id: string;

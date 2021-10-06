@@ -24,6 +24,10 @@
 
 }
 
+.movie-card img {
+  max-width: 300px;
+}
+
 .movie-card:hover img {
   border-radius: 5px 5px 0px 0px;
 }

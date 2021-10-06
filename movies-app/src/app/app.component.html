@@ -1,9 +1,6 @@
 <div class="app">
 <div class="wrapper">
   <nav>
-    <input type="checkbox" id="show-search">
-    <input type="checkbox" id="show-menu">
-    <label for="show-menu" class="menu-icon"><mat-icon>menu</mat-icon></label>
     <div class="content">
       <div class="logo"><a href="/home">CYBORG HD</a></div>
       <ul class="links">
@@ -23,12 +20,14 @@
     </div>
     <div class="wrap">
       <div class="search">
-        <input type="text" (keyup)="onKeyPress($event)" class="searchTerm" placeholder="Movies, people, genres...">
-        <button type="submit" class="searchButton">
+        <input type="text" (keyup)="doSearch($event)" class="search-term" placeholder="Movies, people, genres...">
+        <button type="submit" class="search-button">
           <mat-icon [ngStyle]="{'color':'white'}">search</mat-icon>
         </button>
       </div>
     </div>
+    <input type="checkbox" id="show-menu">
+    <label for="show-menu" class="menu-icon"><mat-icon>menu</mat-icon></label>
   </nav>
 </div>
 <router-outlet></router-outlet>

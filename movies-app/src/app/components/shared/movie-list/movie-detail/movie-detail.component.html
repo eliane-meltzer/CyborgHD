@@ -1,0 +1,19 @@
+<div class="dialog-header"[ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w1280/' + data.movie.backdrop_path + ')'}">
+<div mat-dialog-close class="close-button">
+<mat-icon [ngStyle]="{'color':'grey'}" class="close-icon">close</mat-icon>
+</div>
+</div>
+<img class ="poster" src="https://image.tmdb.org/t/p/w1280/{{data.movie.poster_path}}" [alt]="data.movie.title ? data.movie.title : data.movie.original_title">
+<div class="dialog-body">
+  <h1 class="title" mat-dialog-title>{{data.movie.original_title}}</h1>
+  <p><span [ngStyle]="{ 'color': convertRating(data.movie.vote_average) >= 70 ? '#00FF00 ' : 'orange' }">{{convertRating(data.movie.vote_average)}}%</span> • {{getReleaseYear(data.movie.release_date)}} <span class="bullet">•</span> <span class="play-button"><mat-icon class="play-icon">play_arrow</mat-icon> Play</span></p>
+  <br>
+    <p>{{data.movie.overview}}</p>
+</div>
+<div class="genre-wrapper">
+  <span *ngFor="let genre of movieGenres">
+        <span class="genre">
+      {{genre}}
+          </span>
+      </span>
+</div>

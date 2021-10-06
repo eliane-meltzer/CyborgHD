@@ -20,7 +20,6 @@ export class MoviesService {
 
     searchMovies(searchString: String): any {
         searchString.replace(" ", "%20");
-        console.log('https://api.themoviedb.org/3/search/movie?api_key='+ process.env.API_KEY +'&language=en-US&query=' + searchString + '&page=1&include_adult=false');
         return this.httpService.get('https://api.themoviedb.org/3/search/movie?api_key='+ process.env.API_KEY +'&language=en-US&query=' + searchString + '&page=1&include_adult=false', {
                 headers: {
                     'Accept': 'application/json'

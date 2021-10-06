@@ -15,6 +15,8 @@ import { PopularComponent } from './components/popular/popular.component';
 import { GenresComponent } from './components/genres/genres.component';
 import { MovieListComponent } from './components/shared/movie-list/movie-list.component';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { TopRatedComponent } from './components/top-rated/top-rated.component';
     CommonModule,
     BrowserAnimationsModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

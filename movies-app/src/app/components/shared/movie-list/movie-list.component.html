@@ -5,10 +5,9 @@
     </h1>
     <div class="movie-list">
       <span *ngFor="let movie of movies">
-        <span class="all-poster">
-                 <div class="movie-card">
+        <span *ngIf="movie.poster_path && !movie.adult" class="all-poster">
+          <div class="movie-card" (click)="viewMovieDetails(movie)">
             <img *ngIf="movie.poster_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" [alt]="movie.title ? movie.title : movie.original_title">
-            <img *ngIf="!movie.poster_path" mat-card-image src="http://www.catedrauamfujitsu.es/wp-content/themes/invicta/styles/images/defaults/no_photo.jpg" class="movie-header-card" [alt]="movie.title ? movie.title : movie.original_title">
           </div>
           </span>
       </span>

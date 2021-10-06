@@ -29,11 +29,7 @@ export class AppComponent {
     );
   }
 
-  public searchInput: string;
-
-
-  onKeyPress(event) {
-    console.log("onKeyPress - " + event.target.value.length);
+  doSearch(event) {
     this.searchService.updateSearchString(event.target.value);
     if(this.router.url != "/search")
       this.router.navigateByUrl("/search");

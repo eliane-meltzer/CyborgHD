@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {MoviesService} from "../../../../services/movies.service";
 import {Movie} from "../../../../models/movie";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {Genre} from "../../../../models/genre";
 
 @Component({
   selector: 'app-movie-detail',
@@ -10,28 +12,36 @@ import {Movie} from "../../../../models/movie";
 export class MovieDetailComponent implements OnInit {
 
   movie: Movie;
+  movieGenres: Array<string> = [];
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(
+    public dialogRef: MatDialogRef<MovieDetailComponent>,
+    private moviesService: MoviesService,
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
   ngOnInit(): void {
+    this.moviesService.getGenres().subscribe(
+      genres => {
+        this.data.movie.genre_ids.forEach(movieGenre => {
+          let result = genres.genres.find(genreCategory => {
+            return movieGenre === genreCategory.id;
+          });
+          if(result) {
+            this.movieGenres.push(result.name);
+          }
+        });
+      });
   }
 
   convertRating(rating: number): number {
     return Math.round((rating/10)*100);
   }
 
-
-  getMovie(id) {
-    const movieSubs = this.moviesService.getMovie(id).subscribe(
-      movie => {
-        this.movie = movie;
-        if (!this.movie) {
-          alert('Server Error')
-        } else {
-        }
-      }, () => {},
-      () => { if (movieSubs) { movieSubs.unsubscribe() } }
-    );
+  getReleaseYear(releaseDate: string) : string {
+    return releaseDate.substring(0,4);
   }
-
 }
