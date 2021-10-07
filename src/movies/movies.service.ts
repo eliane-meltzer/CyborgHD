@@ -1,4 +1,4 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import {forwardRef, HttpException, Inject, Injectable} from '@nestjs/common';
 import { HttpService } from "@nestjs/axios";
 import { catchError, map } from "rxjs/operators";
 
@@ -9,8 +9,7 @@ import { catchError, map } from "rxjs/operators";
 
 @Injectable()
 export class MoviesService {
-    constructor(private httpService: HttpService) {}
-
+    constructor(@Inject(forwardRef(() => HttpService)) private readonly httpService: HttpService) {}
 
     /**
      * Retrieves movie based on movieId from The MovieDB

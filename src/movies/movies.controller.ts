@@ -6,7 +6,7 @@ export class MoviesController {
     constructor(private moviesService: MoviesService) {}
 
     @Get('search/:searchString')
-    searchMovie(@Param('searchString') searchString): any {
+    searchMovies(@Param('searchString') searchString): any {
         return this.moviesService.searchMovies(searchString);
     }
 
@@ -21,7 +21,7 @@ export class MoviesController {
     }
 
     @Get('toprated')
-    getTrending(): any {
+    getTopRated(): any {
         return this.moviesService.getTopRated();
     }
 
