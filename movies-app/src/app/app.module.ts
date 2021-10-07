@@ -16,6 +16,7 @@ import { NgModule } from '@angular/core';
 import { PopularComponent } from './components/popular/popular.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
+import {WINDOW_PROVIDERS} from "./window-token";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { TopRatedComponent } from './components/top-rated/top-rated.component';
     MatIconModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [WINDOW_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

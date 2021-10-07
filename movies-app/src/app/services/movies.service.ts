@@ -1,17 +1,23 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import { Observable } from "rxjs";
+import {WINDOW} from "../window-token";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
 
+  origin = this.window.location.hostname;
   baseUrl: string;
   prefix: string = "movies";
 
-  constructor(private http: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/';
+  constructor(
+    private http: HttpClient,
+    @Inject(WINDOW) private window: Window
+  ) {
+    this.baseUrl = 'http://' + this.origin + ':3000/api/';
+    console.log("baseurl: " + this.baseUrl)
   }
 
   public getNowPlaying(): Observable<any> {
