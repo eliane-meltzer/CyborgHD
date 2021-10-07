@@ -1,73 +1,57 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Cyborg HD
 
 ## Description
+Cyborg HD is an [Angular](https://angular.io)/[NestJS](https://nestjs.com/) app that allows users to browse and search for movies using data provided by [The Movie Database](https://www.themoviedb.org/documentation/api?language=en-US)'s (TMDB) API.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Figma mockups are accessible [here](https://www.figma.com/file/CAT1QVcPWMCv7bK53AEYml/Cyborg-HD-Mockups?node-id=0%3A86).
+
+Trello Board is accessible [here](https://trello.com/b/KojtWI8M/movie-database).
+  
+
+## Versions
+This project was developed using the following:
+- Angular CLI: 12.2.8
+- Node: 12.16.1
+- Package Manager: npm 6.13.4
+- NestJS 8.1.2
+- The Movie Database 3.0
 
 ## Installation
 
 ```bash
+$ git clone https://github.com/elzalewski/CyborgHD
+$ cd CyborgHD
 $ npm install
+
 ```
 
+## Dependencies
+ Because this project fetches its movie data from TMDB, a TMDB API key is required.
+ Register for your own key [here](https://developers.themoviedb.org/3/getting-started/introduction) and store it as the value for `API_KEY` in `CyborgHD/.env`
+
 ## Running the app
-
 ```bash
-# development
+# start back-end (from project root)
+$ cd src
 $ npm run start
+# NestJS server will be running on port 3000
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# start front-end
+$ cd ../movies-app
+$ npm start
+# front-end will be accessible at http://localhost:4200/ 
 ```
 
 ## Test
-
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+#coming soon
 ```
 
 ## Support
+[Swagger](https://swagger.io/) API Docs are accessible at  http://localhost:3000/api/ when the NestJS server is running. 
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Project Status
+The front-end and back-end functionality of the app is complete. E2E testing, unit testing, and CI/CD are still in progress.
 
 ## License
-
-Nest is [MIT licensed](LICENSE).
+This project is [MIT licensed](LICENSE).
